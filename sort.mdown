@@ -19,11 +19,13 @@ public static void insertionSort (int[] nums) {
 
 ##Heap sort
 Heap即堆数据结构，heap sort是指利用heap的数据结构来实现的排序。要理解heap sort首先就要了解heap的属性。Heap分为maxHeap 和minHeap。就maxHeap来讲即除了根节点外其余全部节点满足A[parent(i)] > A[i]。其结构为近似满二叉树，中间不会有空的节点，操作永远自底向上。Heap sort的原理是首先将数组构建成Heap，然后对heap进行delete min/max的操作得到顺序数组。
+
 Build Heap: 
 ```
 //为了满足heap的性质，一般不用index 0来储存元素
 public static void buildHeap(nums[i]) {
-	//一个heap的叶子节点是从num.lenth/2 + 1这个index开始的，所以只要从不是叶子节点的nums.length/2开始一直检查到index为1的节点保证它们都符合heap的性质即可。
+	//一个heap的叶子节点是从num.lenth/2 + 1这个index开始的，
+	//所以只要从不是叶子节点的nums.length/2开始一直检查到index为1的节点保证它们都符合heap的性质即可。
 for (int i = nums.length/2; i >=1; i--) {
 	maxHeapify(nums, i);
 	}
